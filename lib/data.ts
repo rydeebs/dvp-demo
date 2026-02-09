@@ -7,7 +7,9 @@ export const demoData = {
     totalLeads: 127,
     leadsChange: "+17%",
     teamMembers: 8,
-    activeMembers: "5 Active"
+    activeMembers: "5 Active",
+    dataCompleteness: "94%",
+    timeSaved: "47 hrs/mo"
   },
 
   // Chart data for leads over time
@@ -47,7 +49,12 @@ export const demoData = {
       autoScore: 94,
       assignedTo: "Tom Richards",
       hubspotDeal: "DEAL-2024-089",
-      priority: "high"
+      priority: "high",
+      locationScore: 95,
+      sizeScore: 92,
+      timingScore: 88,
+      relationshipScore: 100,
+      dueDate: "Feb 15"
     },
     {
       id: "rfp-002",
@@ -65,7 +72,12 @@ export const demoData = {
       autoScore: 88,
       assignedTo: "Sarah Mitchell",
       hubspotDeal: "DEAL-2024-090",
-      priority: "medium"
+      priority: "medium",
+      locationScore: 95,
+      sizeScore: 78,
+      timingScore: 85,
+      relationshipScore: 92,
+      dueDate: "Feb 18"
     },
     {
       id: "rfp-003",
@@ -83,7 +95,12 @@ export const demoData = {
       autoScore: 72,
       assignedTo: "Mike Johnson",
       hubspotDeal: "DEAL-2024-091",
-      priority: "low"
+      priority: "low",
+      locationScore: 82,
+      sizeScore: 65,
+      timingScore: 70,
+      relationshipScore: 45,
+      dueDate: "Feb 25"
     },
     {
       id: "rfp-004",
@@ -101,7 +118,12 @@ export const demoData = {
       autoScore: 85,
       assignedTo: "Tom Richards",
       hubspotDeal: "DEAL-2024-092",
-      priority: "high"
+      priority: "high",
+      locationScore: 88,
+      sizeScore: 90,
+      timingScore: 82,
+      relationshipScore: 78,
+      dueDate: "Feb 12"
     },
     {
       id: "rfp-005",
@@ -119,7 +141,12 @@ export const demoData = {
       autoScore: 79,
       assignedTo: "Sarah Mitchell",
       hubspotDeal: "DEAL-2024-093",
-      priority: "medium"
+      priority: "medium",
+      locationScore: 85,
+      sizeScore: 82,
+      timingScore: 75,
+      relationshipScore: 72,
+      dueDate: "Feb 20"
     },
     {
       id: "rfp-006",
@@ -137,7 +164,12 @@ export const demoData = {
       autoScore: 45,
       assignedTo: "Mike Johnson",
       hubspotDeal: "DEAL-2024-094",
-      priority: "low"
+      priority: "low",
+      locationScore: 55,
+      sizeScore: 60,
+      timingScore: 40,
+      relationshipScore: 25,
+      dueDate: "Mar 1"
     },
     {
       id: "rfp-007",
@@ -155,7 +187,12 @@ export const demoData = {
       autoScore: 91,
       assignedTo: "Tom Richards",
       hubspotDeal: "DEAL-2024-095",
-      priority: "high"
+      priority: "high",
+      locationScore: 92,
+      sizeScore: 95,
+      timingScore: 88,
+      relationshipScore: 90,
+      dueDate: "Feb 14"
     },
     {
       id: "rfp-008",
@@ -173,7 +210,12 @@ export const demoData = {
       autoScore: 87,
       assignedTo: "Sarah Mitchell",
       hubspotDeal: "DEAL-2024-096",
-      priority: "high"
+      priority: "high",
+      locationScore: 90,
+      sizeScore: 88,
+      timingScore: 85,
+      relationshipScore: 85,
+      dueDate: "Feb 16"
     },
     {
       id: "rfp-009",
@@ -191,7 +233,12 @@ export const demoData = {
       autoScore: 58,
       assignedTo: "Dan Kelly",
       hubspotDeal: "DEAL-2024-097",
-      priority: "low"
+      priority: "low",
+      locationScore: 75,
+      sizeScore: 48,
+      timingScore: 55,
+      relationshipScore: 52,
+      dueDate: "Feb 28"
     },
     {
       id: "rfp-010",
@@ -209,7 +256,12 @@ export const demoData = {
       autoScore: 82,
       assignedTo: "Emily Rodriguez",
       hubspotDeal: "DEAL-2024-098",
-      priority: "medium"
+      priority: "medium",
+      locationScore: 88,
+      sizeScore: 85,
+      timingScore: 78,
+      relationshipScore: 75,
+      dueDate: "Feb 22"
     }
   ],
 

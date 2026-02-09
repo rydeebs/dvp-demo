@@ -84,7 +84,7 @@ export default function RFPRouterPage() {
             <CardHeader>
               <div className="flex items-start justify-between">
                 <div>
-                  <CardTitle className="text-lg">{rfp.title}</CardTitle>
+                  <CardTitle className="text-lg">{rfp.name}</CardTitle>
                   <CardDescription>{rfp.client} • {rfp.estimatedValue}</CardDescription>
                 </div>
                 <Badge variant={rfp.priority === "high" ? "destructive" : rfp.priority === "medium" ? "default" : "secondary"} className="text-lg px-3 py-1">
