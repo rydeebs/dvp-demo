@@ -1,0 +1,23 @@
+{
+  "name": "delaware-valley-paving-demo",
+  "version": "1.0.0",
+  "description": "Delaware Valley Paving - Automation Dashboard Demo for CEO",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000 || python -m SimpleHTTPServer 8000",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "paving",
+    "hubspot",
+    "automation",
+    "crm",
+    "dashboard"
+  ],
+  "author": "Delaware Valley Paving Demo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/delaware-valley-paving-demo"
+  }
+}
