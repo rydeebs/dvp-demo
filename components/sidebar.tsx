@@ -58,7 +58,7 @@ export function Sidebar() {
   return (
     <div className="w-64 border-r bg-card h-screen flex flex-col">
       {/* Logo */}
-      <div className="p-3 border-b bg-black">
+      <div className="p-3 border-b">
         <Image
           src="/logo.png"
           alt="Delaware Valley Paving"
