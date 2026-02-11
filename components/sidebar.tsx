@@ -29,16 +29,16 @@ const workgroups = [
     id: "hubspot",
     label: "HubSpot Core",
     routes: [
-      { href: "/hubspot", label: "HubSpot Native", badge: "Native" }
+      { href: "/hubspot", label: "HubSpot Automation", badge: "Native" },
+      { href: "/enrichment", label: "Data Enrichment", badge: "Auto" },
     ]
   },
   {
     id: "automation",
-    label: "Automation Layer",
+    label: "Inbound/Outbound",
     routes: [
-      { href: "/enrichment", label: "Data Enrichment", badge: "Auto" },
       { href: "/rfp-router", label: "RFP Alert Router", badge: "Auto" },
-      { href: "/estimator", label: "Bid Estimator", badge: "Assist" },
+      { href: "/estimator", label: "Lead Generator", badge: "Auto" },
     ]
   },
   {
