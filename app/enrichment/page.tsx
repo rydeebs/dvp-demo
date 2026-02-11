@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { demoData } from "@/lib/data"
-import { CheckCircle2, Clock, Upload, FileSpreadsheet, ArrowDown, Search, Mail, Database, CheckCheck } from "lucide-react"
+import { CheckCircle2, Clock, Upload, FileSpreadsheet, ArrowDown, Search, Mail, Database, CheckCheck, Bot, Globe, Building2, MapPin, Ruler, Calendar } from "lucide-react"
 import { useRef, useState } from "react"
 
 export default function EnrichmentPage() {
@@ -277,6 +277,133 @@ export default function EnrichmentPage() {
               ))}
             </TableBody>
           </Table>
+        </CardContent>
+      </Card>
+
+      {/* OpenClaw Automatic Data Enrichment */}
+      <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
+        <CardHeader>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Bot className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <CardTitle className="text-xl">Automatic Data Enrichment with OpenClaw</CardTitle>
+              <CardDescription>Fully automated contact enrichment pipeline</CardDescription>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className="bg-card border rounded-lg p-4">
+            <div className="space-y-4">
+              {/* Trigger */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center flex-shrink-0">
+                  <Database className="w-5 h-5 text-white" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold">New contact in HubSpot</p>
+                  <p className="text-sm text-muted-foreground">OpenClaw detects new contact creation</p>
+                </div>
+              </div>
+              
+              <div className="flex justify-center">
+                <ArrowDown className="w-5 h-5 text-primary" />
+              </div>
+
+              {/* Step 1 */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                  <Globe className="w-5 h-5 text-green-500" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-medium">Searches web for company info</p>
+                  <p className="text-xs text-muted-foreground">Company website, LinkedIn, news articles</p>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <ArrowDown className="w-5 h-5 text-primary" />
+              </div>
+
+              {/* Step 2 */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                  <Building2 className="w-5 h-5 text-orange-500" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-medium">Checks county records for past projects</p>
+                  <p className="text-xs text-muted-foreground">Permit history, previous contractors, project values</p>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <ArrowDown className="w-5 h-5 text-primary" />
+              </div>
+
+              {/* Step 3 */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-purple-500" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-medium">Looks up property details</p>
+                  <p className="text-xs text-muted-foreground">Property type, ownership, zoning information</p>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <ArrowDown className="w-5 h-5 text-primary" />
+              </div>
+
+              {/* Step 4 */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
+                  <Ruler className="w-5 h-5 text-cyan-500" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-medium">Estimates square footage from Google Maps</p>
+                  <p className="text-xs text-muted-foreground">Satellite imagery analysis for parking lots & roads</p>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <ArrowDown className="w-5 h-5 text-primary" />
+              </div>
+
+              {/* Step 5 */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-5 h-5 text-pink-500" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-medium">Populates ALL custom fields automatically</p>
+                  <p className="text-xs text-muted-foreground">Job type, property type, estimated value, square footage, and more</p>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <ArrowDown className="w-5 h-5 text-primary" />
+              </div>
+
+              {/* Step 6 */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center flex-shrink-0">
+                  <Calendar className="w-5 h-5 text-yellow-500" />
+                </div>
+                <div className="flex-1">
+                  <p className="font-medium">Adds enrichment timestamp</p>
+                  <p className="text-xs text-muted-foreground">Tracks when data was last updated for accuracy</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t">
+              <p className="text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">Result:</span> Every new contact is automatically enriched with complete data within seconds, eliminating manual research and data entry.
+              </p>
+            </div>
+          </div>
         </CardContent>
       </Card>
     </div>

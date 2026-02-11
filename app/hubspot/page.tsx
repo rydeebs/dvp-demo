@@ -1,128 +1,421 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Check, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { 
+  Bot, 
+  UserPlus, 
+  FileText, 
+  Mail, 
+  Phone, 
+  Calendar, 
+  BarChart3, 
+  Zap, 
+  RefreshCw,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
+  MessageSquare,
+  Clock,
+  Target,
+  Building2,
+  Play
+} from "lucide-react"
 
 export default function HubSpotPage() {
   return (
     <div className="p-8 space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">HubSpot Native Capabilities</h1>
-        <p className="text-muted-foreground">Understanding what HubSpot does well vs. where automation adds value</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">HubSpot Automation</h1>
+          <p className="text-muted-foreground">Clawdbot-powered automations that supercharge your HubSpot CRM</p>
+        </div>
+        <Button className="gap-2">
+          <Play className="w-4 h-4" />
+          Run All
+        </Button>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        {/* What HubSpot Does Well */}
-        <Card>
+      {/* Automation Categories */}
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        
+        {/* Contact Data Enrichment */}
+        <Card className="border-blue-500/20 hover:border-blue-500/40 transition-colors">
           <CardHeader>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
-                <Check className="w-5 h-5 text-green-600" />
+            <div className="flex items-center justify-between">
+              <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                <UserPlus className="w-5 h-5 text-blue-500" />
               </div>
-              <div>
-                <CardTitle>HubSpot Strengths</CardTitle>
-                <CardDescription>Core CRM capabilities</CardDescription>
-              </div>
+              <Badge variant="secondary">Auto</Badge>
             </div>
+            <CardTitle className="mt-3">Contact Data Enrichment</CardTitle>
+            <CardDescription>Auto-fill missing contact fields</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="border-l-2 border-green-500 pl-3 py-2">
-              <h3 className="font-semibold">Contact & Company Management</h3>
-              <p className="text-sm text-muted-foreground">System of record for all contacts, companies, relationships</p>
-            </div>
-            <div className="border-l-2 border-green-500 pl-3 py-2">
-              <h3 className="font-semibold">Deal Pipeline Tracking</h3>
-              <p className="text-sm text-muted-foreground">Visual pipeline, stages, deal values, forecasting</p>
-            </div>
-            <div className="border-l-2 border-green-500 pl-3 py-2">
-              <h3 className="font-semibold">Email Tracking & Templates</h3>
-              <p className="text-sm text-muted-foreground">Open tracking, click tracking, template library</p>
-            </div>
-            <div className="border-l-2 border-green-500 pl-3 py-2">
-              <h3 className="font-semibold">Basic Workflows</h3>
-              <p className="text-sm text-muted-foreground">Simple if/then automation, task creation, notifications</p>
-            </div>
-            <div className="border-l-2 border-green-500 pl-3 py-2">
-              <h3 className="font-semibold">Reporting & Dashboards</h3>
-              <p className="text-sm text-muted-foreground">Standard reports, custom dashboards, analytics</p>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Find missing phone numbers
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Verify email addresses
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Add job titles & LinkedIn profiles
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Enrich company data (size, revenue)
+              </li>
+            </ul>
+            <div className="mt-4 pt-4 border-t flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">247 contacts enriched this month</span>
+              <Button variant="ghost" size="sm" className="text-xs">Run Now</Button>
             </div>
           </CardContent>
         </Card>
 
-        {/* What HubSpot Struggles With */}
-        <Card>
+        {/* RFP Document Review */}
+        <Card className="border-purple-500/20 hover:border-purple-500/40 transition-colors">
           <CardHeader>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
-                <X className="w-5 h-5 text-red-600" />
+            <div className="flex items-center justify-between">
+              <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                <FileText className="w-5 h-5 text-purple-500" />
               </div>
-              <div>
-                <CardTitle>HubSpot Limitations</CardTitle>
-                <CardDescription>Where automation adds value</CardDescription>
-              </div>
+              <Badge variant="secondary">Auto</Badge>
             </div>
+            <CardTitle className="mt-3">RFP Document Review</CardTitle>
+            <CardDescription>Extract key details from RFP documents</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="border-l-2 border-red-500 pl-3 py-2">
-              <h3 className="font-semibold">Context-Aware Logic</h3>
-              <p className="text-sm text-muted-foreground">Can't auto-score RFPs based on location, size, timing, relationships</p>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Parse PDF attachments automatically
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Extract scope, budget, timeline
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Identify key requirements
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Flag compliance requirements
+              </li>
+            </ul>
+            <div className="mt-4 pt-4 border-t flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">32 RFPs processed this week</span>
+              <Button variant="ghost" size="sm" className="text-xs">Run Now</Button>
             </div>
-            <div className="border-l-2 border-red-500 pl-3 py-2">
-              <h3 className="font-semibold">External Data Integration</h3>
-              <p className="text-sm text-muted-foreground">Can't pull weather data, competitor pricing, permit filings</p>
+          </CardContent>
+        </Card>
+
+        {/* Email Sequence Optimization */}
+        <Card className="border-green-500/20 hover:border-green-500/40 transition-colors">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                <Mail className="w-5 h-5 text-green-500" />
+              </div>
+              <Badge variant="secondary">Auto</Badge>
             </div>
-            <div className="border-l-2 border-red-500 pl-3 py-2">
-              <h3 className="font-semibold">Cross-System Orchestration</h3>
-              <p className="text-sm text-muted-foreground">Can't coordinate between email, calendar, SMS, crew schedules</p>
+            <CardTitle className="mt-3">Email Sequence Optimization</CardTitle>
+            <CardDescription>AI-powered email timing & content</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Optimal send time prediction
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Subject line A/B testing
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Personalize based on deal stage
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Auto-pause on engagement signals
+              </li>
+            </ul>
+            <div className="mt-4 pt-4 border-t flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">+23% open rate improvement</span>
+              <Button variant="ghost" size="sm" className="text-xs">Run Now</Button>
             </div>
-            <div className="border-l-2 border-red-500 pl-3 py-2">
-              <h3 className="font-semibold">Proactive Actions</h3>
-              <p className="text-sm text-muted-foreground">Can't monitor for events and take action (weather delays, contract renewals)</p>
+          </CardContent>
+        </Card>
+
+        {/* Call Logging & Transcription */}
+        <Card className="border-orange-500/20 hover:border-orange-500/40 transition-colors">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                <Phone className="w-5 h-5 text-orange-500" />
+              </div>
+              <Badge variant="secondary">Auto</Badge>
             </div>
-            <div className="border-l-2 border-red-500 pl-3 py-2">
-              <h3 className="font-semibold">Complex Calculations</h3>
-              <p className="text-sm text-muted-foreground">Can't generate preliminary estimates based on project specs</p>
+            <CardTitle className="mt-3">Call Logging & Transcription</CardTitle>
+            <CardDescription>Auto-capture call insights</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Transcribe sales calls automatically
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Extract action items & next steps
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Update deal notes automatically
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Flag competitor mentions
+              </li>
+            </ul>
+            <div className="mt-4 pt-4 border-t flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">156 calls logged this month</span>
+              <Button variant="ghost" size="sm" className="text-xs">Run Now</Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Meeting Scheduler Intelligence */}
+        <Card className="border-cyan-500/20 hover:border-cyan-500/40 transition-colors">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                <Calendar className="w-5 h-5 text-cyan-500" />
+              </div>
+              <Badge variant="secondary">Auto</Badge>
+            </div>
+            <CardTitle className="mt-3">Meeting Scheduler Intelligence</CardTitle>
+            <CardDescription>Smart scheduling & prep</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Auto-suggest optimal meeting times
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Generate meeting prep briefs
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Send smart reminders
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Auto-create follow-up tasks
+              </li>
+            </ul>
+            <div className="mt-4 pt-4 border-t flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">89 meetings scheduled</span>
+              <Button variant="ghost" size="sm" className="text-xs">Run Now</Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Deal Stage Automation */}
+        <Card className="border-pink-500/20 hover:border-pink-500/40 transition-colors">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div className="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center">
+                <Target className="w-5 h-5 text-pink-500" />
+              </div>
+              <Badge variant="secondary">Auto</Badge>
+            </div>
+            <CardTitle className="mt-3">Deal Stage Automation</CardTitle>
+            <CardDescription>Auto-advance deals based on signals</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Move deals on email reply
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Advance on document view
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Flag stalled deals automatically
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Trigger alerts on deal changes
+              </li>
+            </ul>
+            <div className="mt-4 pt-4 border-t flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">45 deals auto-advanced</span>
+              <Button variant="ghost" size="sm" className="text-xs">Run Now</Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Duplicate Detection & Merge */}
+        <Card className="border-red-500/20 hover:border-red-500/40 transition-colors">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
+                <RefreshCw className="w-5 h-5 text-red-500" />
+              </div>
+              <Badge variant="secondary">Auto</Badge>
+            </div>
+            <CardTitle className="mt-3">Duplicate Detection & Merge</CardTitle>
+            <CardDescription>Keep your CRM clean</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Find duplicate contacts/companies
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Smart merge recommendations
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Preserve activity history
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Weekly cleanup reports
+              </li>
+            </ul>
+            <div className="mt-4 pt-4 border-t flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">23 duplicates found</span>
+              <Button variant="ghost" size="sm" className="text-xs">Run Now</Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Company Research */}
+        <Card className="border-indigo-500/20 hover:border-indigo-500/40 transition-colors">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div className="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center">
+                <Building2 className="w-5 h-5 text-indigo-500" />
+              </div>
+              <Badge variant="secondary">Auto</Badge>
+            </div>
+            <CardTitle className="mt-3">Company Research</CardTitle>
+            <CardDescription>Auto-research target accounts</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Pull company news & updates
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Track leadership changes
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Monitor expansion signals
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Identify buying triggers
+              </li>
+            </ul>
+            <div className="mt-4 pt-4 border-t flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">78 companies monitored</span>
+              <Button variant="ghost" size="sm" className="text-xs">Run Now</Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Pipeline Analytics */}
+        <Card className="border-yellow-500/20 hover:border-yellow-500/40 transition-colors">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div className="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center">
+                <BarChart3 className="w-5 h-5 text-yellow-500" />
+              </div>
+              <Badge variant="secondary">Insight</Badge>
+            </div>
+            <CardTitle className="mt-3">Pipeline Analytics</CardTitle>
+            <CardDescription>AI-powered forecasting</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Win probability scoring
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Revenue forecasting
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Deal velocity tracking
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Bottleneck identification
+              </li>
+            </ul>
+            <div className="mt-4 pt-4 border-t flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">$1.2M forecasted this Q</span>
+              <Button variant="ghost" size="sm" className="text-xs">View Report</Button>
             </div>
           </CardContent>
         </Card>
       </div>
 
-      {/* Automation Layer Value */}
-      <Card>
+      {/* Clawdbot Integration */}
+      <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
         <CardHeader>
-          <CardTitle>Automation Layer: What We Add</CardTitle>
-          <CardDescription>HubSpot remains the system of record. Automation multiplies what it can do.</CardDescription>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Bot className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <CardTitle className="text-xl">Powered by Clawdbot</CardTitle>
+              <CardDescription>All automations run continuously in the background</CardDescription>
+            </div>
+          </div>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent>
           <div className="grid gap-4 md:grid-cols-3">
-            <div className="border rounded-lg p-4">
-              <Badge className="mb-2">Auto</Badge>
-              <h3 className="font-semibold mb-1">Smart Routing</h3>
-              <p className="text-sm text-muted-foreground">RFPs auto-scored and routed to the right estimator based on location, size, expertise</p>
+            <div className="flex items-center gap-3 p-4 rounded-lg border bg-card">
+              <Zap className="w-8 h-8 text-yellow-500" />
+              <div>
+                <p className="font-semibold text-2xl">1,247</p>
+                <p className="text-sm text-muted-foreground">Automations run today</p>
+              </div>
             </div>
-            <div className="border rounded-lg p-4">
-              <Badge className="mb-2">Auto</Badge>
-              <h3 className="font-semibold mb-1">Data Enrichment</h3>
-              <p className="text-sm text-muted-foreground">Auto-populate job type, property type, square footage from emails and documents</p>
+            <div className="flex items-center gap-3 p-4 rounded-lg border bg-card">
+              <Clock className="w-8 h-8 text-blue-500" />
+              <div>
+                <p className="font-semibold text-2xl">47 hrs</p>
+                <p className="text-sm text-muted-foreground">Time saved this week</p>
+              </div>
             </div>
-            <div className="border rounded-lg p-4">
-              <Badge className="mb-2">Assist</Badge>
-              <h3 className="font-semibold mb-1">Preliminary Estimates</h3>
-              <p className="text-sm text-muted-foreground">Generate ballpark quotes to speed up initial response time</p>
-            </div>
-            <div className="border rounded-lg p-4">
-              <Badge className="mb-2">Auto</Badge>
-              <h3 className="font-semibold mb-1">Follow-Up Tracking</h3>
-              <p className="text-sm text-muted-foreground">Monitor SLAs, auto-draft follow-up emails, escalate overdue deals</p>
-            </div>
-            <div className="border rounded-lg p-4">
-              <Badge className="mb-2">Insight</Badge>
-              <h3 className="font-semibold mb-1">Competitive Intelligence</h3>
-              <p className="text-sm text-muted-foreground">Track competitor pricing, win rates, and flag deals where they're involved</p>
-            </div>
-            <div className="border rounded-lg p-4">
-              <Badge className="mb-2">Ops</Badge>
-              <h3 className="font-semibold mb-1">Weather Coordination</h3>
-              <p className="text-sm text-muted-foreground">Auto-reschedule jobs based on weather, notify crews and customers</p>
+            <div className="flex items-center gap-3 p-4 rounded-lg border bg-card">
+              <Sparkles className="w-8 h-8 text-purple-500" />
+              <div>
+                <p className="font-semibold text-2xl">99.8%</p>
+                <p className="text-sm text-muted-foreground">Automation success rate</p>
+              </div>
             </div>
           </div>
         </CardContent>

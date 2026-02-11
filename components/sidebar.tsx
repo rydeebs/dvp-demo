@@ -29,7 +29,7 @@ const workgroups = [
     id: "hubspot",
     label: "HubSpot Core",
     routes: [
-      { href: "/hubspot", label: "HubSpot Automation", badge: "Native" },
+      { href: "/hubspot", label: "HubSpot Overview", badge: "Native" },
       { href: "/enrichment", label: "Data Enrichment", badge: "Auto" },
     ]
   },
@@ -39,13 +39,13 @@ const workgroups = [
     routes: [
       { href: "/rfp-router", label: "RFP Alert Router", badge: "Auto" },
       { href: "/estimator", label: "Lead Generator", badge: "Auto" },
+      { href: "/construction-monitor", label: "New Construction Monitor", badge: "Auto" },
     ]
   },
   {
     id: "operations",
     label: "Operations",
     routes: [
-      { href: "/followup", label: "Follow-Up", badge: "Auto" },
       { href: "/competitor", label: "Competitor Intel", badge: "Insight" },
       { href: "/scheduler", label: "Weather & Crew", badge: "Ops" },
     ]
