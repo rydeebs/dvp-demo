@@ -20,4 +20,12 @@ export const sidebarConfig: SidebarWorkgroup[] = [
       { label: "Job Site Scheduler", href: "/field-ops/jobs", tag: "Auto" },
     ],
   },
+  {
+    id: "knowledge",
+    name: "Knowledge",
+    items: [
+      { label: "Ask DVP", href: "/askdvp", tag: "Auto" },
+      { label: "Knowledge Sources", href: "/askdvp/sources", tag: "Native" },
+    ],
+  },
 ]
