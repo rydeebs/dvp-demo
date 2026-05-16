@@ -4,15 +4,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { 
-  LayoutDashboard, 
-  Database, 
-  UserPlus, 
-  Filter,
-  Calculator,
-  Mail,
-  Users,
-  Calendar,
+import { sidebarConfig } from "@/lib/sidebar.config"
+import {
+  LayoutDashboard,
   Plus,
   ChevronRight
 } from "lucide-react"
@@ -22,34 +16,6 @@ import { Button } from "@/components/ui/button"
 
 const mainRoutes = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
-]
-
-const workgroups = [
-  {
-    id: "hubspot",
-    label: "HubSpot Core",
-    routes: [
-      { href: "/hubspot", label: "HubSpot Overview", badge: "Native" },
-      { href: "/enrichment", label: "Data Enrichment", badge: "Auto" },
-    ]
-  },
-  {
-    id: "automation",
-    label: "Inbound/Outbound",
-    routes: [
-      { href: "/rfp-router", label: "RFP Alert Router", badge: "Auto" },
-      { href: "/estimator", label: "Lead Generator", badge: "Auto" },
-      { href: "/construction-monitor", label: "New Construction Monitor", badge: "Auto" },
-    ]
-  },
-  {
-    id: "operations",
-    label: "Operations",
-    routes: [
-      { href: "/competitor", label: "Competitor Intel", badge: "Insight" },
-      { href: "/scheduler", label: "Weather & Crew", badge: "Ops" },
-    ]
-  }
 ]
 
 export function Sidebar() {
@@ -96,47 +62,51 @@ export function Sidebar() {
           <div className="flex items-center justify-between px-2 mb-2">
             <h3 className="text-xs font-semibold text-muted-foreground uppercase">Workgroups</h3>
           </div>
-          
-          <Accordion type="multiple" defaultValue={["automation", "hubspot", "operations"]} className="space-y-1">
-            {workgroups.map((group) => (
-              <AccordionItem key={group.id} value={group.id} className="border-none">
-                <AccordionTrigger className="text-sm font-medium text-foreground hover:no-underline">
-                  {group.label}
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-1 pl-2">
-                    {group.routes.map((route) => (
-                      <Link
-                        key={route.href}
-                        href={route.href}
-                        className={cn(
-                          "flex items-center gap-2 px-3 py-1.5 rounded-md text-sm transition-colors group",
-                          pathname === route.href
-                            ? "bg-accent text-accent-foreground font-medium"
-                            : "text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground"
-                        )}
-                      >
-                        <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <span className="flex-1">{route.label}</span>
-                        {route.badge && (
-                          <span className={cn(
-                            "text-xs px-1.5 py-0.5 rounded",
-                            route.badge === "Native" ? "bg-gray-100 text-gray-600" :
-                            route.badge === "Auto" ? "bg-blue-100 text-blue-600" :
-                            route.badge === "Assist" ? "bg-purple-100 text-purple-600" :
-                            route.badge === "Insight" ? "bg-green-100 text-green-600" :
-                            "bg-orange-100 text-orange-600"
-                          )}>
-                            {route.badge}
-                          </span>
-                        )}
-                      </Link>
-                    ))}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+
+          {sidebarConfig.length > 0 ? (
+            <Accordion type="multiple" defaultValue={sidebarConfig.map(g => g.id)} className="space-y-1">
+              {sidebarConfig.map((group) => (
+                <AccordionItem key={group.id} value={group.id} className="border-none">
+                  <AccordionTrigger className="text-sm font-medium text-foreground hover:no-underline">
+                    {group.name}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="space-y-1 pl-2">
+                      {group.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className={cn(
+                            "flex items-center gap-2 px-3 py-1.5 rounded-md text-sm transition-colors group",
+                            pathname === item.href
+                              ? "bg-accent text-accent-foreground font-medium"
+                              : "text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground"
+                          )}
+                        >
+                          <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <span className="flex-1">{item.label}</span>
+                          {item.tag && (
+                            <span className={cn(
+                              "text-xs px-1.5 py-0.5 rounded",
+                              item.tag === "Native" ? "bg-gray-100 text-gray-600" :
+                              item.tag === "Auto" ? "bg-blue-100 text-blue-600" :
+                              item.tag === "Assist" ? "bg-purple-100 text-purple-600" :
+                              item.tag === "Insight" ? "bg-green-100 text-green-600" :
+                              "bg-orange-100 text-orange-600"
+                            )}>
+                              {item.tag}
+                            </span>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          ) : (
+            <p className="px-3 py-2 text-xs text-muted-foreground">No workgroups yet</p>
+          )}
         </div>
 
         <Button variant="outline" size="sm" className="w-full justify-start gap-2 text-muted-foreground">
