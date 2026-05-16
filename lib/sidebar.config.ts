@@ -25,6 +25,7 @@ export const sidebarConfig: SidebarWorkgroup[] = [
     name: "Knowledge",
     items: [
       { label: "Ask DVP", href: "/askdvp", tag: "Auto" },
+      { label: "PM Software", href: "/pm-software", tag: "Insight" },
       { label: "Knowledge Sources", href: "/askdvp/sources", tag: "Native" },
     ],
   },
