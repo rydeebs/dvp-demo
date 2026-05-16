@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/sidebar";
+import { ChatDock } from "@/components/chat/chat-dock";
 import { Search, Inbox, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -49,6 +50,7 @@ export default function RootLayout({
             </main>
           </div>
         </div>
+        <ChatDock />
       </body>
     </html>
   );
